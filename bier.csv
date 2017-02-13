@@ -1,0 +1,48 @@
+A001,Beer,Amstel,R17.00 
+A002,Beer,Becks non-alcohol,R24.00 
+A003,Beer,Black Label ,R17.00 
+A004,Beer,Castle Lager,R17.00 
+A005,Beer,Castle Lite,R17.00 
+A006,Beer,Windhoek,R18.00 
+A007,Beer,Windhoek Draught,R20.00 
+A008,Beer,Windhoek Lite,R18.00 
+B001,Ciders/Coolers,Flying Fish ,R17.00 
+B002,Ciders/Coolers,Red square Red/Purple,R22.00 
+B003,Ciders/Coolers,Savana Dry,R21.00 
+B004,Ciders/Coolers,Savana Light,R21.00 
+B005,Ciders/Coolers,Smirnoff spin,R22.00 
+C001,Spirits,Bells Whisky,R12.00 
+C002,Spirits,Captain Morgan Dark Rum,R12.00 
+C003,Spirits,Gordons Gin,R9.00 
+C004,Spirits,Jameson Whisky,R18.00 
+C005,Spirits,Klipdrift Premium,R12.00 
+C006,Spirits,Richelieu Brandy,R9.00 
+C007,Spirits,Smirnoff Vodka,R9.00 
+C008,Spirits,Southern Comfort,R12.00 
+C009,Spirits,Spiced Gold Rum,R9.00 
+D001,Mixers,Appletizer,R20.00 
+D002,Mixers,Coke,R13.00 
+D003,Mixers,Coke light,R13.00 
+D004,Mixers,Cream Soda,R13.00 
+D005,Mixers,Dry lemon,R13.00 
+D006,Mixers,Ginger ale,R13.00 
+D007,Mixers,Lemonade,R13.00 
+D008,Mixers,Red Bull,R26.00 
+D009,Mixers,Roses cola tonic,R2.00 
+D010,Mixers,Roses lime juice,R2.00 
+D011,Mixers,Roses passionfruit,R2.00 
+D012,Mixers,Soda water,R13.00 
+D013,Mixers,Sprite,R13.00 
+D014,Mixers,Still water Bonaqua,R10.00 
+E001,Shooters,Amarula cream,R10.00 
+E002,Shooters,Jagermeister,R15.00 
+E003,Shooters,Tequila Olmeca Silver,R12.00 
+E004,Shooters,PO-10-C,R10.00 
+E005,Shooters,Sidekick Cookies Cream/Strawberry,R10.00 
+E006,Shooters,Zoerdoef Passion Fruit,R10.00 
+F001,Wine,Four Cousins Rose,R75.00 
+F002,Wine,Kanonkop Kadette,R140.00 
+F003,Wine,Old Brown Sherry,R5.00 
+F004,Wine,Spier Chardonnay,R95.00 
+F005,Wine,Spier Sauvignon Blanc,R95.00 
+F006,Wine,Two Ocean Cab Merlot,R75.00 
