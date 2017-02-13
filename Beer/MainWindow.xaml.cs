@@ -62,51 +62,26 @@ namespace Beer
 
             categories = csv.GetCategories();
 
+            this.catStackPanel.Items.Clear();
             foreach (var cat in categories)
             {
-                Button button = new Button();
-                button.Width = 150;
-                button.Height = 100;
+
+                ListBoxItem item = new ListBoxItem();
+                item.Width = 150;
+                item.Height = 80;
+
                 Label label = new Label() { Content = cat };
-                button.Content = label;
-                button.Click += Button_Click;
+                item.Content = label;
 
                 //var i = this.catStackPanel;
-                this.catStackPanel.Children.Add(button);
-
+                this.catStackPanel.Items.Add(item);
             }
         }
 
         // Category select button click
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string selectedCategory = ((sender as Button).Content as Label).Content.ToString();
-            // Get beers
-            string[] drinks = csv.GetDrinks(selectedCategory);
 
-            this.selectStackPanel.Children.Clear();
-
-            foreach (var drink in drinks)
-            {
-                Button button = new Button();
-                button.Width = 160;
-                button.Height = 50;
-                Label label = new Label() { Content = drink };
-                button.Content = label;
-                button.Click += Button_Click1;
-
-                //var i = this.catStackPanel;
-                this.selectStackPanel.Children.Add(button);
-            }
-
-        }
-
-        // Beer select category click
-        private void Button_Click1(object sender, RoutedEventArgs e)
-        {
-            string drinkName = ((sender as Button).Content as Label).Content.ToString();
-            AddSelectedDrink(drinkName);
-            displaySelectedDrinks();
         }
 
         private void displaySelectedDrinks()
@@ -209,6 +184,41 @@ namespace Beer
             stockFileName = stockFileName.Substring(0, stockFileName.IndexOf(" "));
             stockFileName += ".csv";
             stock.WriteToCSVID(stockFileName);
+        }
+
+        // Beer select category click
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string drinkName = ((sender as Button).Content as Label).Content.ToString();
+            AddSelectedDrink(drinkName);
+            displaySelectedDrinks();
+        }
+
+
+        // Beer select category click
+        private void catStackPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (catStackPanel.SelectedItem == null) return;
+            string selectedCategory = ((catStackPanel.SelectedItem as ListBoxItem).Content as Label).Content.ToString();
+
+            // Get beers
+            string[] drinks = csv.GetDrinks(selectedCategory);
+
+            this.selectStackPanel.Items.Clear();
+
+            foreach (var drink in drinks)
+            {
+                Button button = new Button();
+                button.Width = 160;
+                button.Height = 50;
+                Label label = new Label() { Content = drink };
+                button.Content = label;
+                button.Click += Button_Click1;
+
+                //var i = this.catStackPanel;
+                this.selectStackPanel.Items.Add(button);
+            }
+
         }
     }
 }
