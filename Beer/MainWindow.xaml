@@ -10,12 +10,12 @@
         <Grid Margin="0,36,0,0">
             
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="206*"/>
+                <ColumnDefinition Width="206"/>
                 <ColumnDefinition Width="361*"/>
-                <ColumnDefinition Width="249*"/>
+                <ColumnDefinition Width="249"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="catStackPanel" Grid.ColumnSpan="1" SelectionChanged="catStackPanel_SelectionChanged"/>
-        <ListBox x:Name="selectStackPanel" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="selectStackPanel_SelectionChanged">
+            <ListBox x:Name="catStackPanel" Grid.ColumnSpan="1" SelectionChanged="catStackPanel_SelectionChanged" HorizontalAlignment="Left" Width="206"/>
+            <ListBox x:Name="selectStackPanel" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="selectStackPanel_SelectionChanged">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True" />
