@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Class="Beer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Beer"
+        mc:Ignorable="d"
+        Title="Beer POS" Height="601.79" Width="823.745" Closing="MetroWindow_Closing">
+    <Grid>
+        <TabControl x:Name="tabControl" Margin="10">
+            <TabItem Header="Home">
+                <StackPanel x:Name="catStackPanel" Margin="10"/>
+            </TabItem>
+            <TabItem Header="Select">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="550*"/>
+                        <ColumnDefinition Width="241*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel x:Name="selectStackPanel" />
+                    <Grid  Grid.Column="1">
+                        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="357" Margin="10,38,0,0" VerticalAlignment="Top" Width="212"/>
+                        <Label x:Name="label" Content="Items" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="label1" Content="Total" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="totalCostBlock" HorizontalAlignment="Left" Margin="64,405,0,0" TextWrapping="Wrap" Text="R 0.00" VerticalAlignment="Top"/>
+                        <Button x:Name="button" Content="Pay" HorizontalAlignment="Left" Margin="10,446,0,0" VerticalAlignment="Top" Width="212" Height="47" Click="button_Click_1"/>
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Controls:MetroWindow>
