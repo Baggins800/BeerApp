@@ -71,6 +71,9 @@ namespace Beer
                 item.Height = 80;
 
                 Label label = new Label() { Content = cat };
+                label.FontSize = 14;
+                label.FontWeight = FontWeights.Bold;
+
                 item.Content = label;
 
                 //var i = this.catStackPanel;
