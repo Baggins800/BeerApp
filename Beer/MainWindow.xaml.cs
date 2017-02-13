@@ -92,12 +92,26 @@ namespace Beer
             listBox.Items.Clear();
             foreach(var k in selectedDrinks.Keys)
             {
+                const int fontsize = 24;
                 StackPanel stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
                 Label name = new Label() { Content = k };
+                name.Width = 200;
+                name.FontSize = fontsize;
                 Label qty = new Label() { Content = selectedDrinks[k] < 10 ? "0" + selectedDrinks[k].ToString() : selectedDrinks[k].ToString() };
+                qty.FontSize = fontsize;
+                Label price = new Label() { Content = "@ (R "+ csv.GetPrice(k).ToString("F")  + ")"};
+                price.FontSize = fontsize;
+                double price_ = csv.GetPrice(k) * selectedDrinks[k];
+                Label pricetotal = new Label() { Content = "R " + price_.ToString("F") };
+                pricetotal.FontSize = fontsize;
                 Button removeButton = new Button() { Content = "-" };
+                removeButton.FontSize = fontsize;
                 Button plusButton = new Button() { Content = "+" };
-
+                plusButton.FontSize = fontsize;
+                removeButton.Width = 50;
+                removeButton.Height = 50;
+                plusButton.Width = 50;
+                plusButton.Height = 50;
                 removeButton.Tag = k;
                 removeButton.Click += RemoveButton_Click;
                 plusButton.Tag = k;
@@ -106,6 +120,8 @@ namespace Beer
                 stackPanel.Children.Add(plusButton);
                 stackPanel.Children.Add(removeButton);
                 stackPanel.Children.Add(name);
+                stackPanel.Children.Add(price);
+                stackPanel.Children.Add(pricetotal);
                 listBox.Items.Add(stackPanel);
             }
 
