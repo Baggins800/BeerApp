@@ -7,30 +7,22 @@
         xmlns:local="clr-namespace:Beer"
         mc:Ignorable="d"
         Title="Beer POS" Height="601.79" Width="823.745" Closing="MetroWindow_Closing">
-    <Grid>
-        <TabControl x:Name="tabControl" Margin="10">
-            <TabItem Header="Home">
-                <StackPanel x:Name="catStackPanel" Margin="10"/>
-            </TabItem>
-            <TabItem Header="Select">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="550*"/>
-                        <ColumnDefinition Width="241*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel x:Name="selectStackPanel" />
-                    <Grid  Grid.Column="1">
-                        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="357" Margin="10,38,0,0" VerticalAlignment="Top" Width="212"/>
-                        <Label x:Name="label" Content="Items" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="label1" Content="Total" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
-                        <TextBlock x:Name="totalCostBlock" HorizontalAlignment="Left" Margin="64,405,0,0" TextWrapping="Wrap" Text="R 0.00" VerticalAlignment="Top"/>
-                        <Button x:Name="button" Content="Pay" HorizontalAlignment="Left" Margin="10,446,0,0" VerticalAlignment="Top" Width="212" Height="47" Click="button_Click_1"/>
-                    </Grid>
-                </Grid>
+        <Grid Margin="0,36,0,0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="206*"/>
+                <ColumnDefinition Width="361*"/>
+                <ColumnDefinition Width="249*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="catStackPanel" Grid.ColumnSpan="1"/>
+            <StackPanel x:Name="selectStackPanel" Grid.Column="1" />
+            <Grid  Grid.Column="2">
+                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="357" Margin="10,38,0,0" VerticalAlignment="Top" Width="212"/>
+                <Label x:Name="label" Content="Items" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label1" Content="Total" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
+                <TextBlock x:Name="totalCostBlock" HorizontalAlignment="Left" Margin="64,405,0,0" TextWrapping="Wrap" Text="R 0.00" VerticalAlignment="Top"/>
+                <Button x:Name="button" Content="Pay" HorizontalAlignment="Left" Margin="10,446,0,0" VerticalAlignment="Top" Width="212" Height="47" Click="button_Click_1"/>
+            </Grid>
+        </Grid>
 
-            </TabItem>
-        </TabControl>
-
-
-    </Grid>
 </Controls:MetroWindow>

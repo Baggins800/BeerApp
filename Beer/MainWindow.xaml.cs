@@ -66,7 +66,7 @@ namespace Beer
             {
                 Button button = new Button();
                 button.Width = 150;
-                button.Height = 50;
+                button.Height = 100;
                 Label label = new Label() { Content = cat };
                 button.Content = label;
                 button.Click += Button_Click;
@@ -75,7 +75,6 @@ namespace Beer
                 this.catStackPanel.Children.Add(button);
 
             }
-            SetInactivity(0);
         }
 
         // Category select button click
@@ -84,7 +83,6 @@ namespace Beer
             string selectedCategory = ((sender as Button).Content as Label).Content.ToString();
             // Get beers
             string[] drinks = csv.GetDrinks(selectedCategory);
-            SetInactivity(1);
 
             this.selectStackPanel.Children.Clear();
 
@@ -168,17 +166,6 @@ namespace Beer
                 selectedDrinks[name] = 1;
             else
                 selectedDrinks[name]++;*/
-        }
-
-        void SetInactivity(int index)
-        {
-            this.tabControl.SelectedIndex = index;
-            foreach(TabItem panel in this.tabControl.Items)
-            {
-                panel.IsEnabled = false;
-            }
-            for(int i = 0; i < this.tabControl.SelectedIndex; i++)
-                (this.tabControl.Items[i] as TabItem).IsEnabled = true;
         }
 
         private double calculateTotal()
