@@ -94,6 +94,7 @@ namespace Beer
                 Label qty = new Label() { Content = selectedDrinks[k] < 10 ? "0" + selectedDrinks[k].ToString() : selectedDrinks[k].ToString() };
                 Button removeButton = new Button() { Content = "-" };
                 Button plusButton = new Button() { Content = "+" };
+
                 removeButton.Tag = k;
                 removeButton.Click += RemoveButton_Click;
                 plusButton.Tag = k;
@@ -189,9 +190,7 @@ namespace Beer
         // Beer select category click
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            string drinkName = ((sender as Button).Content as Label).Content.ToString();
-            AddSelectedDrink(drinkName);
-            displaySelectedDrinks();
+
         }
 
 
@@ -209,16 +208,44 @@ namespace Beer
             foreach (var drink in drinks)
             {
                 Button button = new Button();
-                button.Width = 160;
-                button.Height = 50;
+                //button.Style = Resources["AccentedSquareButtonStyle"] as Style;
+
                 Label label = new Label() { Content = drink };
-                button.Content = label;
-                button.Click += Button_Click1;
+                label.FontSize = 18;
+                label.FontWeight = FontWeights.Bold;
+
+                label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
+                
+                Image image = new Image();
+                image.Source = new BitmapImage(new Uri(@"drink.png", UriKind.RelativeOrAbsolute));
+                image.Width = 48;
+                image.Height = 48;
+
+                StackPanel panel = new StackPanel();
+                panel.Orientation = Orientation.Vertical;
+                panel.Children.Add(image);
+                panel.Children.Add(label);
+                
+
+                ListBoxItem item = new ListBoxItem();
+                item.Content = panel;
+                item.Width = 160;
+                item.Height = 160;
+                item.Tag = drink;
 
                 //var i = this.catStackPanel;
-                this.selectStackPanel.Items.Add(button);
+                this.selectStackPanel.Items.Add(item);
             }
 
+        }
+
+        private void selectStackPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (selectStackPanel.SelectedItem == null) return;
+            string drinkName = (string)(selectStackPanel.SelectedItem as ListBoxItem).Tag;
+            selectStackPanel.SelectedIndex = -1;
+            AddSelectedDrink(drinkName);
+            displaySelectedDrinks();
         }
     }
 }

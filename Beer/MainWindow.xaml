@@ -15,7 +15,13 @@
                 <ColumnDefinition Width="249*"/>
             </Grid.ColumnDefinitions>
             <ListBox x:Name="catStackPanel" Grid.ColumnSpan="1" SelectionChanged="catStackPanel_SelectionChanged"/>
-        <ListBox x:Name="selectStackPanel" Grid.Column="1" />
+        <ListBox x:Name="selectStackPanel" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="selectStackPanel_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
             <Grid  Grid.Column="2">
                 <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="357" Margin="10,38,0,0" VerticalAlignment="Top" Width="212"/>
                 <Label x:Name="label" Content="Items" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
