@@ -52,8 +52,15 @@ namespace Beer
             try
             {
                 tendered = double.Parse(controller.ToString());
-                change = tendered - total;
-                ShowChange();
+                if (tendered >= total)
+                {
+                    change = tendered - total;
+                    ShowChange();
+                }
+                else
+                {
+                    await this.ShowMessageAsync("Error", "Incorrect amount tendered");
+                }
             }
             catch
             {
