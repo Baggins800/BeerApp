@@ -92,10 +92,10 @@ namespace Beer
             listBox.Items.Clear();
             foreach(var k in selectedDrinks.Keys)
             {
-                const int fontsize = 24;
+                const int fontsize = 15;
                 StackPanel stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
                 Label name = new Label() { Content = k };
-                name.Width = 200;
+                name.Width = 180;
                 name.FontSize = fontsize;
                 Label qty = new Label() { Content = selectedDrinks[k] < 10 ? "0" + selectedDrinks[k].ToString() : selectedDrinks[k].ToString() };
                 qty.FontSize = fontsize;
@@ -108,10 +108,10 @@ namespace Beer
                 removeButton.FontSize = fontsize;
                 Button plusButton = new Button() { Content = "+" };
                 plusButton.FontSize = fontsize;
-                removeButton.Width = 50;
-                removeButton.Height = 50;
-                plusButton.Width = 50;
-                plusButton.Height = 50;
+                removeButton.Width = 40;
+                removeButton.Height = 40;
+                plusButton.Width = 40;
+                plusButton.Height = 40;
                 removeButton.Tag = k;
                 removeButton.Click += RemoveButton_Click;
                 plusButton.Tag = k;
@@ -231,7 +231,7 @@ namespace Beer
 
                 Label label = new Label() { Content = drink };
                 label.FontSize = 18;
-                label.FontWeight = FontWeights.Bold;
+                //label.FontWeight = FontWeights.Bold;
 
                 label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
                 
