@@ -51,11 +51,15 @@ namespace Beer
             if (!File.Exists(defaultFileName)){
 
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.DefaultExt = ".csv";
+                openFileDialog.AddExtension = true;
+                openFileDialog.Title = "Select Beer CSV file";
+                openFileDialog.Filter = "CSV|*.csv";
+                openFileDialog.DefaultExt = "csv";
 
                 if (openFileDialog.ShowDialog() == true)
                     File.Copy(openFileDialog.FileName, defaultFileName);
             }
+
             csv = new Bar(defaultFileName);
             invoice = new Invoice(defaultFileName);
             stock = new Stock(defaultFileName);
