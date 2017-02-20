@@ -128,5 +128,25 @@ namespace Beer
             this.textBox.Focus();
             this.textBox.Select(text.Length, 0);
         }
+
+        private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void textBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            textBox.Focus();
+        }
+
+        private void textBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Value = double.Parse(this.textBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture);
+                Result = Beer.DialogResult.Success;
+                this.Close();
+            }
+        }
     }
 }

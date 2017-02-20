@@ -9,7 +9,7 @@
         Title="TenderWindow" Height="371.25" Width="299.08">
     <Grid>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="64" Height="64"/>
-        <TextBox  x:Name="textBox" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="271" FontSize="20"/>
+        <TextBox  x:Name="textBox" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="271" FontSize="20" PreviewKeyDown="textBox_PreviewKeyDown" Loaded="textBox_Loaded" KeyUp="textBox_KeyUp"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="button_Copy" Content="7" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="64" Height="64" FontSize="20" FontWeight="Normal" Click="button_Copy_Click"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="button_Copy1" Content="8" HorizontalAlignment="Left" Margin="79,64,0,0" VerticalAlignment="Top" Width="64" Height="64" FontSize="20" FontWeight="Normal" Click="button_Copy1_Click"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="button_Copy2" Content="9" HorizontalAlignment="Left" Margin="148,64,0,0" VerticalAlignment="Top" Width="64" Height="64" FontSize="20" FontWeight="Normal" Click="button_Copy2_Click"/>
