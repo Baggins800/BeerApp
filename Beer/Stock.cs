@@ -12,6 +12,10 @@ namespace Beer
     {
         public static string FormatPrice(double d)
         {
+            if (d == 0)
+            {
+                return "R 0.00";
+            }
             return string.Format("R {0:#.00}", Convert.ToDecimal(d));
         }
     }
