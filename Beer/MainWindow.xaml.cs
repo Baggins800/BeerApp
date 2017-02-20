@@ -201,12 +201,7 @@ namespace Beer
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // TODO STOCK TAKING AND SAVE!!!
-            DateTime localDate = DateTime.Now;
-            var culture = new CultureInfo("de-DE");
-            string stockFileName = "stock_" + localDate.ToString(culture);
-            stockFileName = stockFileName.Replace(".", "_");
-            stockFileName = stockFileName.Substring(0, stockFileName.IndexOf(" "));
-            stockFileName += ".csv";
+            string stockFileName = "stock.csv";
             stock.WriteToCSV(stockFileName);
         }
 
