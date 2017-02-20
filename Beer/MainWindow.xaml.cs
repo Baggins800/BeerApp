@@ -207,7 +207,7 @@ namespace Beer
             stockFileName = stockFileName.Replace(".", "_");
             stockFileName = stockFileName.Substring(0, stockFileName.IndexOf(" "));
             stockFileName += ".csv";
-            stock.WriteToCSVID(stockFileName);
+            stock.WriteToCSV(stockFileName);
         }
 
         // Beer select category click

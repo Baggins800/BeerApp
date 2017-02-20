@@ -160,13 +160,20 @@ namespace Beer
             string csv = "";
             if (File.Exists(filename))
             {
-                filename_new += ".new";
+                var lines = File.ReadAllLines(filename);
+                var values = lines.Select(l => new { ID = l.Split(',').First(), Count = l.Split(',')[1] });
+                foreach (var i in values)
+                {
+                    items[i.ID] += Convert.ToInt32(i.Count);
+                }
             }
+
             foreach (var i in items)
             {
                 csv += string.Format("{0},{1}\n", i.Key, i.Value);
             }
             File.WriteAllText(filename_new, csv);
+
         }
 
         public void WriteToCSVID(string filename)
