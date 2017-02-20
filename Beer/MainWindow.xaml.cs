@@ -182,8 +182,8 @@ namespace Beer
             double total = calculateTotal();
             var payWindow = new PayWindow(total);
             //381,361
-            payWindow.Left = this.Left + this.Width / 2 - 381 / 2;
-            payWindow.Top = this.Top + this.Height / 2 - 381 / 2;
+            payWindow.Left = this.Left + this.Width / 2 - payWindow.Width / 2;
+            payWindow.Top = this.Top + this.Height / 2 - payWindow.Height / 2;
             payWindow.ShowDialog();
 
             if(payWindow.Result == 1) // Next customer, clear stuff

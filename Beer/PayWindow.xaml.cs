@@ -48,10 +48,14 @@ namespace Beer
 
         async void GetTendered()
         {
-            var controller = await this.ShowInputAsync("Cash", "Enter amount tendered");
-            try
+            KeypadWindow keypad = new KeypadWindow();
+            keypad.Left = this.Left + this.Width / 2 - keypad.Width / 2;
+            keypad.Top = this.Top + this.Height / 2 - keypad.Height / 2;
+
+            keypad.ShowDialog();
+            if(keypad.Result == Beer.DialogResult.Success)
             {
-                tendered = double.Parse(controller.ToString());
+                tendered = keypad.Value;
                 if (tendered >= total)
                 {
                     change = tendered - total;
@@ -61,12 +65,7 @@ namespace Beer
                 {
                     await this.ShowMessageAsync("Error", "Incorrect amount tendered");
                 }
-            }
-            catch
-            {
-
-            }
-            
+            }            
         }
 
         //Card
